@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section>
+    <div class="leaves">
+        <div class="set">
+            <div><img src="assets/h1.png"></div>
+            <div><img src="assets/h2.png"></div>
+            <div><img src="assets/h3.png"></div>
+            <div><img src="assets/h4.png"></div>
+            <div><img src="assets/h1.png"></div>
+            <div><img src="assets/h2.png"></div>
+            <div><img src="assets/h3.png"></div>
+            <div><img src="assets/h4.png"></div>
+        </div>
+    </div>
+    <img src="assets/bc.jpg" class="bg">
+    <img src="assets/unicorn.png" class="unicorn">
+    <!--<img src="assets/trees.png" class="trees">-->
+    <div class="form-container">
+        <!-- Sign In Form -->
+        <div class="login" id="signinForm">
+            <h2>Sign In</h2>
+            <div class="inputBox">
+                <input type="text" placeholder="Username" />
+            </div>
+            <div class="inputBox">
+                <input type="password" placeholder="Password"/>
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="Login" id="btnLogin">
+            </div>
+            <div class="group">
+                <a href="#">Forget Password</a>
+                <a href="#" onclick="showSignupForm()">Signup</a>
+            </div>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div class="login" id="signupForm" style="display: none;">
+            <h2>Sign Up</h2>
+            <div class="inputBox">
+                <input type="text" placeholder="Username" />
+            </div>
+            <div class="inputBox">
+                <input type="email" placeholder="Email" />
+            </div>
+            <div class="inputBox">
+                <input type="password" placeholder="Password" />
+            </div>
+            <div class="inputBox">
+                <input type="password" placeholder="Confirm Password" />
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="Signup" id="btnSignup">
+            </div>
+            <div class="group">
+                <a href="#" onclick="showSigninForm()">Already have an account? Sign In</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function showSignupForm() {
+        document.getElementById('signinForm').style.display = 'none';
+        document.getElementById('signupForm').style.display = 'block';
+    }
+
+    function showSigninForm() {
+        document.getElementById('signinForm').style.display = 'block';
+        document.getElementById('signupForm').style.display = 'none';
+    }
+</script>
+</body>
+</html>
