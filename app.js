@@ -1,49 +1,50 @@
-//firebase configuration
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+import { firebaseConfig } from './authDetails.js'; // Ensure firebaseConfig is correctly exported from firebaseConfig.js
 
-const firebaseConfig = {
-    apiKey: "AIzaSyDDlzwS4_pNHOoL4tQdeChtqb72WgHFgs0",
-    authDomain: "simpleauthentication-9e62b.firebaseapp.com",
-    projectId: "simpleauthentication-9e62b",
-    storageBucket: "simpleauthentication-9e62b.appspot.com",
-    messagingSenderId: "844106200976",
-    appId: "1:844106200976:web:de5eabcf31164e5270e515"
-};
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
-//initialize firebase
-firebase.initializeApp(firebaseConfig);
+// Create an auth instance
+const auth = getAuth(app);
 
-
-//create a auth instance
-const auth = firebase.auth();
-
-
-//signup function
+// Signup function
 document.getElementById('signup-btn').addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent form submission
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    auth.createUserWithEmailAndPassword(email, password).then(() => {
-        alert('user created');
-        document.getElementById('login-btn').click()
-    }).catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-    })
+
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed up successfully
+            const user = userCredential.user;
+            alert('User created successfully');
+            document.getElementById('login-btn').click(); // Simulate login button click or navigate to login
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.error(errorCode, errorMessage);
+        });
 });
 
-
-//login function
-document.getElementById('login-btn').addEventListener('click',(e) => {
-    console.log('clicked');
+// Login function
+document.getElementById('login-btn').addEventListener('click', (e) => {
+    e.preventDefault();
     const email = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
-    auth.signInWithEmailAndPassword(email, password).then(() => {
-        alert('user logged ');
-    }).catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-    })
 
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Logged in successfully
+            const user = userCredential.user;
+            alert('User logged in successfully');
+            // Redirect to the dashboard or another page
+            window.location.href = 'dashboard.html';
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.error(errorCode, errorMessage);
+        });
 });
-
