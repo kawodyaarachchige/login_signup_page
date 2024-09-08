@@ -32,29 +32,7 @@ section .girl {
     z-index: 100;
     pointer-events: none;
 }
-/*
-section .unicorn {
-    position: absolute;
-    scale: 0.65;
-    pointer-events: none;
-    animation: animateUni 10s linear infinite;
-}
-@keyframes animateUni {
-    0% {
-        transform: translateX(calc(100% + 100vw));
-    }
-    50% {
-        transform: translateX(calc(-100% - 100vw));
-    }
-    50.01% {
-        transform: translateX(calc(-100% - 100vw)) rotateY(180deg);
-    }
-    100% {
-        transform: translateX(calc(100% + 100vw)) rotateY(180deg);
-    }
-}*/
 .form-container {
-
     position: relative;
     display: flex;
     justify-content: center;
@@ -113,6 +91,7 @@ section .unicorn {
     flex-direction: column;
     gap: 30px;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+
 }
 .login h2 {
     position: relative;
@@ -129,35 +108,38 @@ section .unicorn {
 .login .inputBox input {
     position: relative;
     width: 100%;
-    padding: 15px 20px;
+    padding: 15px 15px;
     outline: none;
     font-size: 1.25em;
     color: #C587FF;
     border-radius: 5px;
     background: #fcfbfb;
     border: none;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .login .inputBox ::placeholder {
     color: #b0b6b0;
 }
-.login .inputBox #btnLogin  , .login .inputBox #btnSignup {
-    position: relative;
-    border: none;
-    outline: none;
-    background: #FF61B6;
-    color: #fff;
-    cursor: pointer;
+.btn {
+    width: 100%;
+    padding: 15px;
     font-size: 1.25em;
     font-weight: 500;
-    transition: 0.5s;
+    color: #fff;
+    background: #FF61B6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
-.login .inputBox #btnLogin:hover , .login .inputBox #btnSignup:hover {
+.btn:hover {
     background: #DDAFE9;
+    transform: translateY(-3px);
 }
 .login .group {
     display: flex;
     justify-content: space-between;
+    margin-top: 15px;
 }
 .login .group a {
     font-size: 1rem;
@@ -170,6 +152,30 @@ section .unicorn {
 }
 .group span{
     color: #fcfbfb;
+}
+.social-login {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.social-login button {
+    background-color:  #ff6f91;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.github-btn {
+    background-color: #333;
+}
+
+.github-btn:hover, .google-btn:hover {
+    opacity: 0.8;
 }
 .leaves {
     position: absolute;
