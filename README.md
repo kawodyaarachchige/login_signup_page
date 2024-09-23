@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=80&duration=4000&lines=Firebase+Authentication+Login&color=800080" />
+    <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=900&height=80&duration=4000&lines=Firebase+Authentication+Login&color=800080" />
 </h1>
 
 I'm excited to share my latest project – an **interactive, modern sign-up and login page** built with **Firebase Authentication**! This project offers seamless integration of social logins and a secure authentication system using Firebase.
